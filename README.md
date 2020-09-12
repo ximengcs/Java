@@ -1,5 +1,5 @@
 # Java Program Language Learning Code
 Folder      :   BooksStuded : use of books.
                 Document : learning document.
-                Projects : exercise project.
+                Project : exercise project.
                 Note : Learning note.
