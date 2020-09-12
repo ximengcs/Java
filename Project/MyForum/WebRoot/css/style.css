@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+
+body {
+	border: 1px solid red;
+	margin: 0 auto;
+	width: 900px;
+}
+
+/* 标题图片 */
+.title {
+	width: 900px;
+	height: 100px;
+	background-color: #E8F2FE;
+	margin-bottom: 3px;
+}
+/* 菜单栏 */
+.menu {
+	width: 900px;
+	height: 40px;
+	background-color: #F8F8F8;
+	border: 2px solid #EDEDED;
+	margin-bottom: 3px;
+	vertical-align: center;
+}
+
+.menu table {
+	display: inline;
+	float: right;
+	border-spacing: 6px;
+}
+
+.menu td {
+	width: 70px;
+	padding: 3px;
+	background-color:#6CB5FB;
+	outline-color: red;
+}
+
+/* 喊话栏 */
+.shout {
+	width: 900px;
+	height: 50px;
+	background-color: #F8F8F8;
+	border: 2px solid #EDEDED;
+	margin-bottom: 3px;
+}
+
+/* 状态栏 */
+.state {
+	width: 900px;
+	height: 50px;
+	background-color: #F8F8F8;
+	border: 2px solid #EDEDED;
+	margin-bottom: 3px;
+}
+
+/* 小时钟图标 */
+.icon_time {
+	height: 17px;
+	width: 17px;
+}

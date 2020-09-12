@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+
+body {
+	width:950px;
+	height:800px;
+	margin:0 auto;
+	border:1px solid black;
+	font-size:12px;
+}
+
+.top {
+	width:950px;
+	height:22px;
+	background-color:pink;
+}
+
+/*登录部分*/
+.login {
+	width:416px;
+	height:22px;
+	background-color:green;
+	float:left;
+}
+
+/* 设为首页 */
+.indexpage {
+	width:105px;
+	height:20px;
+	background-color:grey;
+	float:left;
+	margin-left:50px;
+}
+
+/* 超链接 */
+.myhref {
+	
+	float:right;
+	width:250px;
+	height:20px;
+	
+	background-color:#b4b4b4;
+}
+
+/* logo */
+.logo {
+	width:137px;
+	height:68px;
+	background-color:yellow;
+	float:left;
+	margin-top:5px;
+}
+
+.logo image {
+	width:137px;
+	height:68px;
+}
+
+/* 导航 */
+.navi {
+	width:807px;
+	height:68px;
+	float:left;
+	margin-left:6px;
+	background-color:green;
+	margin-top:5px;
+}
+
+/* 广告 */
+.ad {
+	height:212px;
+	width:950px;
+	background-color:pink;
+	margin-top:5px;
+	float:left;
+}
+
+/* 学生广告 */
+.stu {
+	width:126px;
+	height:196px;
+	background-color:blue;
+	float:left;
+	margin:5px 0 0 5px;
+}
+
+/* 广告2 */
+.ad2 {
+	width:453px;
+	height:196px;
+	background-color:red;
+	margin:5px 0 0 15px;
+	float:left;
+}
+
+/* 房地产广告 */
+.house {
+	height:196px;
+	width:150px;
+	background-color:orange;
+	margin:5px 0 0 15px;
+	float:left;
+}
+
+/* 图片广告 */
+.pic {
+	width:180px;
+	height:212px;
+	float:right;
+	background-color:blue;
+}

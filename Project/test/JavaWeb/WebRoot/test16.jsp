@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+include:
+<jsp:include page="header.jsp" >
+</jsp:include><br/>
+
+import:
+<c:import url="header.jsp" >
+
+</c:import><br/>
+<div style="background-color:grey;height:50px;"></div>
+
+<c:redirect url=""></c:redirect>
+
+<c:url value=""></c:url>
+</body>
+</html>

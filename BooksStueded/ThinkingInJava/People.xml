@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<people>
+    <person>
+        <first>Dr.Bunsen</first>
+        <last>Honey</last>
+    </person>
+    <person>
+        <first>Gonzo</first>
+        <last>The grear</last>
+    </person>
+    <person>
+        <first>Phillip</first>
+        <last>Fry</last>
+    </person>
+</people>

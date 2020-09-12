@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.user {
+	color:red;
+}
+
+.name {
+	padding:5px;
+	background-color:#D7DEF0;
+	margin:5 0 5 0;
+}
+
+.state {
+	background-color:#E8F2FE;
+	margin-bottom: 10px;
+	padding: 5px;
+	font-size:20px;
+}
+
+.state a {
+	text-decoration: none;
+	padding:3px;
+	background-color: #D7DEF0;
+}
+
+.state a:hover {
+	background-color: #678CB1;
+	color:white;
+}

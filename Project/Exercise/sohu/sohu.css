@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+body {
+	border:1px solid black;
+	margin:30px auto auto auto;
+	width:950px;
+	height:800px;
+}
+
+/* 顶部栏 */
+.top {
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:30px;
+	background-color:#EEF5FD;
+}
+
+/* 顶部栏内容 */
+.top_inner {
+	width:950px;
+	height:30px;
+	/* background-color:grey; */
+	margin:0 auto;
+}
+
+.top_inner img {
+	height:30px;
+	float:left;
+}
+
+.top_inner form {
+	float:left;
+	margin-left:2px;
+}
+
+.top_inner input {
+	margin-left:2px;
+	height:20px;
+	float:left;
+}
+
+/* logo */
+.logo {
+	width:138px;
+	height:75px;
+	background-color:orange;
+	float:left;
+}
+
+/* 导航 */
+.sail {
+	width:805px;
+	height:75px;
+	background-color:blue;
+	float:right;
+}
+
+/* 广告部分 */
+.ad {
+	width:950px;
+	height:235px;
+	background-color:pink;
+	float:left;
+	margin-top:5px;
+}
+
+/* 广告一部分 */
+.part1 {
+	width:125px;
+	height:235px;
+	background-color:green;
+	float:left;
+}
+
+/* 广告二部分 */
+.part2 {
+	width:455px;
+	height:235px;
+	background-color:yellow;
+	float:left;
+	margin-left:13px;
+}
+
+/* 广告三部分 */
+.part3 {
+	width:150px;
+	height:235px;
+	background-color:silver;
+	float:left;
+	margin-left:13px;
+}
+
+/* 广告4部分 */
+.part4 {
+	width:180px;
+	height:235px;
+	background-color:blue;
+	float:right;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 命名空间,对sql进行分类化管理，如果使用mapper代理开发，则有重要作用 -->
+<mapper namespace="test">
+	<!-- 通过id查询记录 -->
+	<!-- 通过select查询数据库,id标识映射文件中的sql,称为statementid
+		将来的sql语句会封装到statement对象中
+		#{}表示一个占位符
+		parametertype指定输入类型
+		#{}中的id表示接受的参数，参数名称就是id，如果输入参数是简单类型，名称可以是value：
+	 	#{value}
+	 	resultType输出结果所映射的java类型 select 指定resulttype
+	 -->
+	<select id="findUserById" parameterType="Integer" resultType="pojo.User">
+		select * from user where id=#{value}
+	</select>
+	
+	<select id="findUserByName" parameterType="String" resultType="pojo.User">
+		select * from user where username like '%${value}%'
+	</select>
+	
+	<!-- 多个参数接受类型只能pojo(User类) -->
+	<insert id="insertUser" parameterType="pojo.User">
+		<selectKey keyProperty="id" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO USER(id, username, PASSWORD) VALUE(#{id}, #{username}, #{password});
+	</insert>
+	
+	<delete id="deleteUser" parameterType="java.lang.Integer">
+		delete from user where id=#{id}
+	</delete>
+	<!-- id必须存在 -->
+	<update id="updateUser" parameterType="pojo.User">
+		update user set username=#{username}, password=#{password}
+		where id=#{id}
+	</update>
+</mapper>

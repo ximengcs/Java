@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+.content {
+	background-color: #E8F2FE;
+	height:500px;
+}
+
+.inner {
+	border:1px solid silver;
+	height:400px;
+	width:400px;
+	position:relative;
+	left:275px;
+	top:50px;
+	background-color: white;
+}
+
+input {
+	font-size:30px;
+	margin-top: 15px;
+}

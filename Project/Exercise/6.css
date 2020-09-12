@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.s1 {
+	width:100px;
+	height:60px;
+	background-color:grey;
+	float:left;
+	margin-left:10px;
+}
+
+#special {
+	/* position:relative;使用相对定位
+	left:40px;在原来的位置向右移动 ,如果希望向左移动，值为负
+	top:100px;在原来的位置向下移动 ，如果希望向上移动，值为负 */
+	left:40px;
+	top:100px;
+	/* position:absolute; */
+	position:fixed;
+}

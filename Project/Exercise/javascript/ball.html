@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language = "javascript">
+
+	/* 球类
+	 */
+	function Ball() {
+		
+		var m;
+		
+		var ins;
+		
+		var f;
+		
+		var p;
+		var row = "right";
+		var col = "down";
+		
+		this.action = function () {
+
+			if( ins == null )
+				ins = document.getElementById( "instance" );
+			if( m == null )
+				m = document.getElementById( "mum" );
+			if( f == null )
+				f = document.getElementById( "flo" );
+
+			if( p == null )
+				p = document.getElementById( "pi" );
+
+			
+			if( row == "right" )
+				ins.style.left = $( ins.style.left ) + 2 + "px";
+			else if( row == "left" )
+				ins.style.left = $( ins.style.left ) - 2 + "px";
+			
+			if( col == "up" ) 
+				ins.style.top = $( ins.style.top ) - 2 + "px";
+			else if( col == "down" ) 
+				ins.style.top = $( ins.style.top ) + 2 + "px";
+
+			p.value = "" + ($( ins.style.left )+$( ins.style.width )) + " " + $( f.style.left );
+			
+			if( $( ins.style.left ) == ( $( m.style.width )-$( ins.style.width ) ) || 
+				( ($( ins.style.left )+$( ins.style.width ) >= $( f.style.left ) && 
+				$( ins.style.left )+$( ins.style.width ) < $( f.style.left )+$( f.style.width )) && 
+				(25+$(ins.style.top) > $(f.style.top) && 
+				25+$(ins.style.top) < $(f.style.top)+$(f.style.height)) ) )
+				row = "left";
+			else if( $( ins.style.left ) == 0 || 
+				( 
+				($( ins.style.left ) <= $( f.style.left )+$( f.style.width ) && 
+				$( ins.style.left )+$( ins.style.width ) > $( f.style.left )+$( f.style.width )
+				)
+				&& 
+				(25+$(ins.style.top) > $(f.style.top) && 
+				25+$(ins.style.top) < $(f.style.top)+$(f.style.height)) ) )
+				row = "right";
+			
+			if( $( ins.style.top ) == ( $( m.style.height )-$( ins.style.height ) ) )
+				col = "up";
+			else if( $( ins.style.top ) == 0 )
+				col = "down";
+			
+		}
+		
+		function $( str ) {
+			return parseInt( str.substring( 0, str.length-2 ) );
+		}
+	}
+	
+	/* 档板
+	*/
+	function Floor() {
+		
+		var m;
+		var f;
+
+		
+		this.action = function(event) {
+			if( m == null )
+				m = document.getElementById( "mum" );
+			if( f == null )
+				f = document.getElementById( "flo" ); 
+
+			if( event.clientY < 470 && event.clientY > 100 )
+				f.style.top = event.clientY-100 + "px";
+			else if( event.clientY <= 100 )
+				f.style.top = 0;
+			else
+				f.style.top = 370 + "px";
+			
+			if( event.clientX < 950 && event.clientX > 300 )
+				f.style.left = event.clientX-300 + "px";
+			else if( event.clientX <= 300 )
+				f.style.left = 0;
+			else
+				f.style.left = 650 + "px";
+		}
+	}
+	
+	var ball = new Ball();
+
+	var floor = new Floor();
+
+</script>
+
+<title></title>
+</head>
+<input id = "pi" type = "text" value = "" />
+<body onmousemove = "floor.action(event);" style = "width:100%;height:1000px;">
+<div id = "mum" style = "width:800px;height:500px;border:3px solid black;position:absolute;top:100px;left:300px;">
+<img onload = "setInterval( 'ball.action()', 1 );" id = "instance" src = "ball.png" style = "position:absolute;top:0px;left:0px;height:50px;width:50px;"/>
+<div id = "flo" style = "position:absolute;top:235px;left:325px;width:130px;height:130px;background-color:red;"></div>
+</div>
+
+</body>
+</html>

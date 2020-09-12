@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel = "stylesheet" href = "1.css" type = "text/css"/>
+<script type="text/javascript" language = "javascript">
+	function show( str ) {
+		
+		// 获取css文件中所有class选择器都获取
+		// stylesheets包含所有css文件，0代表第一个文件
+		var css = document.styleSheets[0].rules; // ie为rules，其他cssRules
+		// 从css变量中取出class
+		// 这里的o表示css文件中第一个样式
+		var style1 = css[0];
+		if( str == "1" )
+			style1.style.backgroundColor = "red";
+		else
+			style1.style.backgroundColor = "black";
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<div class = "div1" id = "test"></div>
+<input type = "button" value = "红色" onclick = "show()"/>
+<input type = "button" value = "黑色" onclick = "show(1)"/>
+</body>
+</html>

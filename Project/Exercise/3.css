@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+/* div1用于控制显示的位置 */
+
+.div1 {
+	width:500px;
+	height:300px;
+	border:1px solid #b4b4b4;
+	margin-left:100px;
+	margin-top:20px;
+}
+
+body {
+	margin:0px;
+	padding:0px;
+}
+
+/* 用于控制显示图片区域的宽度和高度 */
+.faceul {
+	width:350px;
+	height:250px;
+	border:1px solid red;
+	list-style-type:none;
+}
+
+.faceul li {
+	width:50px;
+	height:52px;
+	border:1px solid blue;
+	
+	float:left;/* 左浮动 */
+	margin-left:5px;
+	margin-top:5px;
+}
+
+.faceul img {
+	width:50px;
+}

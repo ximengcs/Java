@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+        
+  <description>this is a tag</description>
+  <display-name>simple tag</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>simple</short-name>
+  <uri>http://simon.com</uri>
+        
+    <tag>
+    <name>simple</name>
+    <tag-class>jstl.Simple1</tag-class>
+    <body-content>empty</body-content>
+ 	 </tag>
+ 	 <tag>
+ 	 <name>simple2</name>
+ 	 <tag-class>jstl.Simple2</tag-class>
+ 	 <body-content>scriptless</body-content>
+ 	 </tag>
+ 	 <tag>
+ 	 <name>simple3</name>
+ 	 <tag-class>jstl.Simple3</tag-class>
+ 	 <body-content>scriptless</body-content>
+ 	 </tag>
+ 	 <tag>
+ 	 <name>simple4</name>
+ 	 <tag-class>jstl.Simple4</tag-class>
+ 	 <body-content>scriptless</body-content>
+ 	 </tag>
+ 	 <tag>
+ 	 <name>filter</name>
+ 	 <tag-class>jstl.FilterContentTest</tag-class>
+ 	 <body-content>scriptless</body-content>
+ 	 </tag>
+ 	 <tag>
+     <name>if</name>
+     <tag-class>jstl.IfTag</tag-class>
+     <body-content>scriptless</body-content>
+      	 <attribute>
+ 	 	<name>flag</name>
+ 		<required>true</required>
+ 	 </attribute>
+ 	 </tag>
+ 	 <tag>
+ 	 <name>then</name>
+ 	 <tag-class>jstl.ThenTag</tag-class>
+ 	 <body-content>scriptless</body-content>
+ 	 </tag>
+</taglib>

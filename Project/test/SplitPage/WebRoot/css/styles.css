@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family:"Consoles";
+	font-size:30px;
+	color:blue;
+}
+
+div a {
+	font-size:30px;
+	color:red;
+	padding: 5px;
+	text-decoration:none;
+}
+
+div a:hover {
+	font-size:30px;
+	background-color:red;
+	color:white;
+	padding: 5px;
+}

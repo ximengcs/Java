@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script language = "javascript">
+	var n = parseInt( window.prompt( ) );
+	for( var i = 0; i < n; i++ ) {
+		for( var j = 1; j <= n*2-1; j++ ) {
+			if( j < n-i || j > n+i )
+				document.write( "&nbsp;&nbsp;&nbsp;" );
+			else
+				document.write( "*&nbsp;" );
+		}
+		document.write( "<br/>" );
+	}
+</script>
+</head>
+<body style = "font-size:30px;">
+
+</body>
+</html>
