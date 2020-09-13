@@ -1,0 +1,80 @@
+<html>
+<head>
+<style stype = "text/css">
+	body {
+		//border:2px solid red;
+		width:90%;
+		margin:30 auto;
+		font-family:黑体,Consoles;
+
+	}
+	/*
+	 *	类名
+	 */
+	.classname {
+		font-size:35px;
+	}
+	/*
+	 *	接口名
+	 */
+	.interfacename {
+		font-size:35px;
+		font-style:italic;
+	}
+	.div1 {
+		//border:1px solid black;
+		height:50px;
+		margin-left:25px;
+		background-color:#F7F7F7;
+	}
+</style>
+<head>
+<body>
+
+javax.servlet.http.<span class = "interfacename">HttpSession</span></br></br>
+
+<!-- 父类 -->
+<a href = "">java.lang.Object</a></br>
+&nbsp;&nbsp;&nbsp;∟javax.servlet.http.HttpSession</br></br>
+
+<!--
+已实现的所有接口
+<div class = "div1"> </div></br>
+-->
+<!--
+直接子类
+<div class = "div1"> 
+	<a href = "http/HttpServlet.html">ServletContext</a>
+</div></br>
+-->
+描述
+<div class = "div1"> 
+	会话
+</div></br>
+
+<table border = 1 width = "100%" cellspacing = 0 cellpadding = 4px>
+	<tr style = "background-color:#CCCCFF;"> <td>字段</td> </tr>
+	<tr> <td>&nbsp;</td> </tr>
+</table></br>
+
+<table border = 1 width = "100%" cellspacing = 0 cellpadding = 4px>
+	<tr style = "background-color:#CCCCFF;"> <td>构造方法</td> </tr>
+	<tr> <td>&nbsp;</td> </tr>
+</table></br>
+
+<table border = 1 width = "100%" cellspacing = 0 cellpadding = 4px>
+	<tr style = "background-color:#CCCCFF;"> <td colspan = "2">方法</td> </tr>
+	<tr> <td>Object</td> <td>getAttribute(String)</td> </tr>
+	<tr> <td>void</td> <td>setAttribute(String, Object)</td> </tr>
+	<tr> <td>void</td> <td>removeAttribute(String)</td> </tr>
+	<tr> <td>&nbsp;&nbsp;&nbsp;</td> <td>getAttributeNames(String)</td> </tr>
+	<tr> <td>boolean</td> <td>isNew()<br/>如果客户还没有用这个回话ID做过响应，就返回true，否则返回false</td> </tr>
+	<tr> <td>long</td> <td>getCreationTime()<br/>返回第一次创建会话的时间</td> </tr>
+	<tr> <td>long</td> <td>getLastAccessedTime()<br/>返回容器最后一次得到包含这个会话ID的请求后过去了多长时间(毫秒数)</td> </tr>
+	<tr> <td>void</td> <td>setMaxInactiveInterval(int)<br/>指定对于这个会话客户请求的最大间隔时间(秒数)</td> </tr>
+	<tr> <td>int</td> <td>getMaxInactiveInterval()<br/>返回对于这个会话客户请求的最大间隔时间(秒数)</td> </tr>
+	<tr> <td>void</td> <td>invalidate()<br/>结束会话，当前存储在这个会话中的所有会话属性也会解除绑定(秒数)</td> </tr>
+</table></br>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+.title {
+	color:yellow;
+	font-size:50px;
+}
+
+#standard {
+	font-size:30px;
+	background-color:grey;
+}
+
+a:link {
+	color:black;
+	font-size:24px;
+	text-decoration:none;
+}
+
+a:hover {
+	color:red;
+	text-decoration:underline;
+	font-size:40px;
+	font-style:宋体;
+}
+
+.sj {
+	font-weight:bold;
+	font-style:italic;
+	color:red;
+}
+
+.wy {
+	font-style:italic;
+}

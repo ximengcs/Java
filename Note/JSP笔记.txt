@@ -1,0 +1,255 @@
+scriptlet: <%  %>
+指令:      <%@ %>
+表达式:    <%= %>
+声明:      <%! %> 置于服务方法外的变量和方法
+
+xml文件中配置jsp生成的java文件的servlet初始化参数:
+在servlet标记中添加jsp-file标记:给jsp生成的servlet配置初始化参数(jsp生成的init方法)
+eg.
+	<servlet>
+		<servlet-name>...</servlet-name>
+		
+		<jsp-file>
+			/Test.jsp
+		</jsp-file>
+		
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>value</param-value>
+		</init-param>
+	</servlet>
+	
+	
+使用一个JSP声明来覆盖jspinit方法:
+<%! 
+	public void jspInit() {
+		// 因为这是在一个servlet中，所以可以调用集成的getServletConfig() 方法
+		ServletConfig sConfig = getServletConfig();
+		
+		// 这与正常servlet中获取值一样
+		String emailAddr = sConfig.getParameter( "email" );
+		
+		// 得到ServletContext的一个引用
+		ServletContext ctx = getServletContext();
+		
+		// 设置一个应用作用域属性
+		ctx.setAttribute( "mail", emailAddr );
+	}
+%>
+
+
+// 禁用脚本
+<web-app ...>
+
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<scripting-invalid>
+				true
+			</scripting-invalid>
+		</jsp-property-group>
+	</jsp-config>
+
+</web-app>
+
+
+// 禁用EL
+整体禁用
+<web-app ...>
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>
+				true
+			</el-ignored>
+		</jsp-property-group>
+	</jsp-config>
+</web-app>
+
+单个页面
+<%@ page isElIgnored = "true" %>
+
+<jsp:useBean id = "person" class = "foo.Person" scope = "request" />
+jsp:useBean:标识标准动作
+id = "person"  声明bean对象的标识符，这对应于以下servlet代码中所用的名
+class = "foo.Person" 声明bean对象的类类型(完全限制名)
+scope = "request"  
+
+ 标识这个bean对象的属性作用域
+
+<jsp:getProperty> 得到bean属性的性质值
+<jsp:getProperty name = "person" property = "name" />
+jsp:property  标识标准动作
+name = "person" 标识具体的bean对象，这与<jsp:useBean>标记的id值匹配
+property = "name"  标识属性中的性质名(也就是与bean类中获取方法和设置方法对应的性质)
+
+
+jsp非标准标记中的标准标记
+<c:out>
+
+<div>
+	<b>Tip of the Day:</b> <br/><br/>
+	<c:out value = "${pageContent.rawHTML}" escapeXml = "true" />
+</div>
+
+<c:if>完成条件包含
+<c:if test = "${userType eq 'member' }">
+	<jsp:include page = "inputComments.jsp"/>
+</c:if>
+
+类似switch语句if/else?
+<c:choose>
+	<c:when test = "${userPref == 'performance'}" >
+		...建议1 
+	</c:when>
+	
+	<c:when test = "${userPref == 'safely'}" >
+		..建议2
+	</c:when>
+	
+	<c:when test = "${userPref == 'maintenance'}">
+		..建议3
+	</c:when>
+	
+	<c:otherwise>
+		..默认建议
+	</c:otherwise>
+</c:choose>
+
+用<c:set>设置属性变量var,如果值为null，属性会被删除
+1.没有体
+<c:set var = "userLevel" scope = "session" value = "Cowboy" />
+如果没有一个名为userlevel的会话作用域属性，就会创建一个  scope是可选的  value不一定为string
+
+<c:set var = "Fido" value = "${person.dog}" />
+如果dog计算为Dog对象，则Fido为dog类型
+
+2.有体
+<c:set var = "userLevel" scope = "session" >
+	sheriff, bartender, cowgirl  // 计算体，并用作变量的值
+</c:set>
+
+用<c:set>设置一个目标性质和值
+1.没有体
+<c:set target="${PetMap}" property="dogName" value="Clover" />
+目标target不能为null，如果目标是一个map，则设置dogname键的相应值，如果目标是一个bean，就设置性质dogname的值
+2.有体
+<c:set target="${person}" property="name" >
+	${foo.name}// 体可以是一个string表达式
+</c:set>
+
+用<c:remove>删除属性
+<c:remove var = "userstatus" scope = "request" />
+
+3中包含方法:
+1.include指令
+<%@ include file = "header.html" %>
+2.<jsp:include>标准动作
+<jsp:include page = "header.html/> 动态：在请求时将page属性值指定的内容增加到当前页面
+注：<jsp:forward page="header.html"/> 和servlet中的forward相同
+3.<c:import> jstl标记
+<c:import url="http://www.wickedsmart.com/horse.html" />  与JSP：include很相似，但是更强大
+
+URL的重写
+servlet中 ：
+public void doGet( HttpServletRequest request, HttpServletResponse repsonse )throws...{
+	response.setContentType( "text/html" );
+	PrintWriter out = response.getWriter();
+	HttpSession session = request.getSession();
+	
+	out.println( "<html><body>" );
+	out.println( "<a href =\"" + response.encodeURL( "/BeerTest.do" ) + "\">click</a> ");
+	out.println( "</html></body>" );
+}
+
+jsp中:
+<%@ taglib prefix = "c" uri = "http://java.sum.com/jsp/jstl/core" %>
+<html><body>
+This is a hyperlink with URL rEWRITING ENABLED.
+<a href = "<c:url value = '/inputComments.jsp' />">Click here</a>
+</body></html>
+
+<c:param>对url编码
+<c:url value = "/inputComments.jsp" var = "inputURL" >
+	<c:param name = "firstName" value = "${first}" />
+	<c:param name = "lastName" value = "${last}" />
+</c:url>
+</c:url>
+
+定制标记处理器
+package foo;
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+import java.io.*;
+
+public class AdvisorTagHandler extends SimpleTagSupport {
+	private String user;
+	
+	// JSP使用TDL中声明的名字调用标记时，容器会调用doTag().
+	public void doTag() throws JspException, IOException {
+		getJspContext().getOut().write( "Hello" + user + "<br/>" );
+		getJspContext().getOut().write( "Your advice is:" + getAdvice() );
+	}
+	
+	// 容器调用这个方法将值设置为标记属性的值.
+	public void setUser( String user ) {
+		this.user = user;
+	}
+	
+	String getAdvice() {
+		String[] adviceStrings = { "That color's not working for you" };
+		int random = (int)(Math.random() * adviceStrings.length );
+		return adviceStrings[random];
+	}
+}
+
+
+只有当标记的<body-content>元素不是enpty时，这个标记才能有体
+<body-content>的取值:
+<body-content>empty</body-content>  这个标记不能有体
+<body-content>scriptless</body-content>  这个标记不能有脚本元素(scriptlet,脚本表达式，声明)
+										 但是可以是模板文本和EL,还可以是定制和标准动作
+<body-content>tagdependent<body-content> 标记体看作是文本，所以不会计算EL，也不会触发标记/动作
+<body-content>JSP</body-content>  能放在JSP中的都能放在这个标记中 
+
+<jsp:attribute> 标记不算体内容
+
+
+
+容器会在4个位置查找TLD
+1.直接在WEB-INF目录查找
+2。在WEB-INF的一个子目录查找
+3.在WEB-INF/lib下的一个jar文件中的meta-inf目录中查找
+4.在3的子目录中查找
+
+EL隐式对象:
+pageScope, requestScope, sessionScope, applicationScope
+param, paramValues
+header, headerValues
+
+.和[]
+点可以访问域
+[]对于map参数是一个键
+[]对于bean参数是域（作用和点相同）
+[]对于list参数是一个下标
+
+EL操作符:
++-*/mod  < > == >= <= && || ! 
+empty:${ empty "" }测试是否为空或空字符串
+	  ${ empty param.test ? "is empty" : "is not empty" }
+	  
+jsp标准动作:
+<jsp:useBean>
+	<jsp:setProperty>
+	<jsp:getProperty>
+<jsp:include>相当与servlet中
+<jsp:forward>相当于servlet中request.getRequestDispacther("newpage.jsp").forward(request,response);
+
+包含动作<jsp:include>与包含指令<%@ include %>：
+<jsp:include>在请求时加载包含的页面可传入参数,<%@ include>在加载时包含页面，相当于复制粘贴
+
+taglib指令引入标签库
+<%@ taglib %>
+
+标准标签库:
+<c:out value="">输出value中的内容，相当于out.print，还有一个参数secapexml：为true时计算引号中的内容

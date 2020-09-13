@@ -1,0 +1,10 @@
+<taglib>
+	<uri>DiceFunction</uri>
+	<founction>
+		<name>rollIt</name>
+		<function-class>foo.DiceRoller</founction-class>
+		<function-signature>
+			int rollDice();
+		</function-signature>
+	</founction>
+</taglib>

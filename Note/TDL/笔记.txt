@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<taglib ....>
+	<tlib-version>1.2</tlib-version> 该标记是必要的，但是不一定要取这个值，开发人员用次表示标记库版本
+	
+	<short-name>RandomTags</short-name> 必要：主要由工具使用
+	
+	// 声明EL函数
+	<function>
+		<name>rollIt</name>
+		<function-class>foo.Dice</function-class>
+		<function-signature>int rollDice()</function-signature>
+	</function>
+	
+	<uri>randomThings</uri>  taglib指令中的唯一名
+	
+	<tag>
+		<description>random advice</description>可选的
+		<name>advice</name> 必要的，标记中就是要用这个名(例如:<my:advice>)
+		
+		<tag0class>foo.advisor</tag-class> 必要的，这样容器才知道在JSP中调用这个标记时要调用什么
+		
+		<body-content>empty</body-content> 必要的，这说明标记的体中不能有任何内容
+		
+		<attribute>  如果你的标记中有属性，每个标记属性都需要有一个<attribute>元素
+			<name>user</name> 
+			<required>true</required> 这说明标记中必须放一个user属性
+			<rtexprvalue>true</rtexprvalue> 这说明user属性可以是一个运行事表达式值
+		</attribute>
+	</tag>
+</taglib>
