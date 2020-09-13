@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>用户名登陆</title>
+<link rel="stylesheet" type="text/css" href="reset.css" />
+<link rel="stylesheet" type="text/css" href="main.css" />
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div class="login_top clearfix">
+		<a href="/" class="login_logo"><img src="timg.png" /></a>
+	</div>
+
+	<div class="login_form_bg">
+		<div class="login_form_wrap clearfix">
+			<div class="login_banner fl"></div>
+			<div class="slogan fl" style="color: #C17B14">金碧辉煌 富丽堂皇</div>
+			<div class="login_form fr">
+				<div class="login_title clearfix">
+					<h1>用户登录</h1>
+					<a href="http://39.108.176.210/user/register/">立即注册</a>
+				</div>
+				<div class="form_input">
+					<form action="/houselottery/StaffManage" method="post">
+						<input type='hidden' name='operate' value='staffLogin' /> <input
+							id="EMPLOYEE_ID" type="text" name="username" class="name_input" />
+						<div class="user_error">输入错误</div>
+
+						<input id="EMPLOYEE_PASSWORD" type="password" name="pwd"
+							class="pass_input" />
+
+						<div class="pwd_error">输入错误</div>
+						<div class="more_input clearfix">
+							<input type="checkbox" name="jizhu" value="1" checked="checked" />
+							<label>记住用户名</label> <a href="#">忘记密码</a>
+						</div>
+						<input type="submit" name="" value="登录" id="input_submit"
+							class="input_submit" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer no-mp">
+		<div class="foot_link">
+			<a href="https://github.com/weilanhanf/daily_fresh_demo">关于我们</a> <span>|</span>
+			<a href="https://www.cnblogs.com/welan/">联系我们</a> <span>|</span> <a
+				href="#">招聘人才</a> <span>|</span> <a href="#">友情链接</a>
+		</div>
+		<p>CopyRight © 2018 大佬说的都队 All Rights Reserved</p>
+		<p>电话：***-******* 京ICP备********号</p>
+	</div>
+
+</body>
+<script type="text/javascript">
+	//获得参数的方法
+
+	var request = {
+
+		QueryString : function(val) {
+
+			var uri = window.location.search;
+
+			var re = new RegExp("" + val + "=([^&?]*)", "ig");
+
+			return ((uri.match(re)) ? (uri.match(re)[0].substr(val.length + 1))
+					: null);
+
+		}
+
+	}
+</script>
+</html>

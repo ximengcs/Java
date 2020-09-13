@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购房登记</title>
+</head>
+<style type="text/css">
+    body {
+        margin:0 auto;
+        padding: 0;
+    }
+    div{
+        width: 1300px;
+        margin:0 auto;
+        padding: 0; 
+    }
+    label {
+        width: 100px;
+        display: inline-block;
+        margin: 10px 0;
+    }
+    .container {
+        width:600px;
+        height:380px;
+    }
+    .div_c{
+        border-radius: 20px;
+        width:550px;
+        height:350px;
+        margin: 10px auto;
+        padding-left: 150px;
+        padding-top: 30px;
+        background-color: #CDCDCD;
+    }
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+        padding:2px 20px 0;
+        color: white;
+    }
+
+    .wrong {
+
+        color: red;
+        background: url(images/error.png) no-repeat;
+        
+    }
+
+    .right {
+        color: green;
+        background: url(images/right.png) no-repeat;
+    }
+
+    .pwd {
+        width: 220px;
+        height: 20px;
+        background: url("images/strong.jpg") no-repeat;
+    }
+    .str1{
+        background-position: 0 -20px;
+    }
+    .str2{
+        background-position: 0 -40px;
+    }
+    .str3{
+        background-position: 0 -60px;
+    }
+    .str4{
+        background-position: 0 -80px;
+    }
+    
+</style>
+<body>
+     <div  class="div" >
+        <h1 style="text-align:center ">购房登记</h1>
+        <br>
+        <br>
+        <hr>
+        <div  class="div_c" >
+            <div class="container">
+                <form action="/houselottery/PurchaserManage" method="post">
+      <input type="hidden" name="operate" value="registerInfo"/>
+                <label>用户姓名：</label><input name="REALNAME" type="text" id="inp1"><span>输入2-10内汉字的用户名</span><br>
+                <label>手机号码：</label><input name="MOBILEPHONE" type="text" id="inp2"><span>输入11位手机号码</span><br>
+                <label>身份证号：</label><input name="CARDCODE" type="text" id="inp3"><span>输入您的身份证号</span><br>
+                <label>证件类型:</label> 
+                    <input type="radio" name="CARDTYPE" value="身份证" checked>身份证号
+                    <input type="radio" name="CARDTYPE" value="军官证">军官证
+                    <input type="radio" name="CARDTYPE" value="残疾证">残疾证<br>
+                <label>购置类型：</label>
+                    <select name="PURCHASETYPE">
+                        <option value="刚需">刚需</option>
+                        <option value="普通">普通</option>
+                    </select><br>
+                <label>缴纳保证金：</label>
+                <input type="radio" name="ISMARGIN" value="yes" checked>是 
+              <input type="radio" name="ISMARGIN" value="no">否<br>
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="width: 60px;" class="btn_dengji" onclick="hh()" type="submit" name="dengji" value='登记'>
+              &nbsp;
+              <input type="reset" style="width: 60px;" name="chengzhi" value="重置">
+                </form>  
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // 获取id 函数
+    function $(id) {return document.getElementById(id);}
+    //  change 函数   验证表单
+    function change(id,fn) {
+        $(id).onblur = fn;   //  fn  函数的意思
+    }
+    //  设置文字函数
+    function setText(obj,txt) {
+        obj.nextSibling.innerHTML = txt;
+    }
+
+    // 设置 类名函数
+    function setClassName(obj,classname) {
+        obj.nextSibling.className = classname;
+    }
+
+    var regIdNo = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
+
+    // // 验证 QQ号码
+    // // 我们的QQ号码  从1 开始的    10000
+    // console.log(/andy/.test("andyandy"));
+    // console.log(/^andy$/.test("andy"));
+    // change("inp1",function() {
+    //     if(/^[1-9][0-9]{4,}$/.test(this.value)) {
+    //         // alert(11)
+    //         setText(this,"恭喜输入正确");
+    //         setClassName(this,"right");
+    //     }
+    //     else {
+    //        //  alert(22);
+    //         setText(this,"对不起，您输入有误");
+    //         setClassName(this,"wrong");
+    //     }
+    // })
+      //    电话号码：  邮编   手机号码    文本型数字
+
+    change("inp2",function() {
+        if(/^[1][0-9]{10}$/.test(this.value)) {
+            // alert(11)
+            setText(this,"手机号码正确");
+            setClassName(this,"right");
+        }else {
+           //  alert(22);
+            setText(this,"对不起，您输入有误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp3",function(){ ///(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+        if(regIdNo.test(this.value) ){
+            // alert(11)
+            setText(this,"身份证号正确");
+            setClassName(this,"right");
+        }else {
+           //  alert(22);
+            setText(this,"对不起，您输入有误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp1",function(){
+        if(/^[\u4E00-\u9FA5]{2,10}$/.test(this.value)){
+          setText(this,"用户名正确");
+            setClassName(this,"right");
+        }else {
+           //  alert(22);
+            setText(this,"对不起，您输入有误");
+            setClassName(this,"wrong");
+        }
+    })
+</script>

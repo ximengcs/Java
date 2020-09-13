@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>InformRockerTime</servlet-name>
+  	<display-name>InformRockerTime</display-name>
+  	<description></description>
+  	<servlet-class>servlet.info.InformRockerTime</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PurchaserManage</servlet-name>
+  	<display-name>PurchaserManage</display-name>
+  	<description></description>
+  	<servlet-class>servlet.PurchaserManage</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Rocker</servlet-name>
+  	<display-name>Rocker</display-name>
+  	<description></description>
+  	<servlet-class>servlet.Rocker</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SellInfoManage</servlet-name>
+  	<display-name>SellInfoManage</display-name>
+  	<description></description>
+  	<servlet-class>servlet.SellInfoManage</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>StaffManage</servlet-name>
+  	<display-name>StaffManage</display-name>
+  	<description></description>
+  	<servlet-class>servlet.StaffManage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InformRockerTime</servlet-name>
+  	<url-pattern>/InformRockerTime</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PurchaserManage</servlet-name>
+  	<url-pattern>/PurchaserManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Rocker</servlet-name>
+  	<url-pattern>/Rocker</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SellInfoManage</servlet-name>
+  	<url-pattern>/SellInfoManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StaffManage</servlet-name>
+  	<url-pattern>/StaffManage</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,78 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 1300px;
+	padding: 0;
+	margin:0 auto;
+	background: #f2f2f2;
+}
+div{
+	padding: 0;
+	margin:0 ;
+}
+.div_sale{
+	width: 1300px;
+}
+.div_main{
+	width: 550px;
+	height: 200px;
+	border-radius: 20px;
+	background-color: #CDCDCD;
+	padding-left: 150px;	
+	margin:0 0 0 300px;
+}
+.div_info{
+	margin:3px 0 0 300px;
+	width: 550px;
+	height: 850px;
+	border-radius: 20px;
+	background-color: #CDCDCD;
+	padding-left: 150px;
+}
+#yaohao_time{
+	background: #F5F6F7;
+	width: 300px;
+	height: 60px;
+	/*border:1px solid red;*/
+	margin-left: 30px;
+}
+#select_time{
+	background: #F5F6F7;
+	width: 300px;
+	height: 60px;
+	/*border:1px solid red;*/
+	margin-left: 0px;
+}
+.yaohao_btn_ok{
+	cursor: pointer;
+	border-radius: 4px;
+}
+.yaohao_btn_ok:hover{
+	
+	background-color:#FB6E53;
+}
+.xuan_btn_ok{
+	cursor: pointer;
+	border-radius: 4px;
+}
+.xuan_btn_ok:hover{
+	background-color:#FB6E53;
+}
+/*table 样式设置*/
+#table_main{
+	width: 350px;
+	height: 660px;
+	border: 1px solid red;
+	float: right;
+	position: relative;
+}
+.div_info tr{
+	height: 35px;
+	line-height: 35px;
+	
+}
+.div_info table{
+	border-collapse: collapse;
+}

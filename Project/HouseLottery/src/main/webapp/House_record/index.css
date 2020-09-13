@@ -1,0 +1,105 @@
+ body {  /* 添加网页背景颜色 */
+	background-color: #F2F2F2;
+	margin: 0px;
+}
+#header{
+	width: 1336px;
+	height: auto;
+	background-color: #169BCC;
+}
+.header{
+
+	background-color: white;
+	height: 100px;
+
+}
+
+.first_page{
+	font-size: 17px;
+	float: right;
+	/*margin-right: 60px;*/
+	margin-top: -40px;
+	padding-right: 20px;
+
+}
+
+.content{
+	margin-top: 20px;
+	background-color: white;
+
+}
+.ul_daohang{
+	width: 600px;
+	height: 35px;
+	/*margin-top: 30px;*/
+	/*background-color: white;*/
+	/*border: 1px solid red;*/
+	/*padding-left: -30px;*/
+	padding-top: 20px;
+}
+
+.nav{
+
+	padding-left: 20px;
+}
+
+
+.ul_title li{
+	list-style-type:none;
+	display:block;
+	float:left;
+	margin-left: 15px;
+	margin:0px 10px; 
+	
+
+
+
+}
+.ul_title .total{
+	left: 10px;
+}
+.yixiang_dengji{
+	width: 98px;
+	float: right;
+	margin-top: -15px;
+	margin-right: 30px;
+}
+.denglu{
+	width:50px;
+	float: right;
+	margin-top: -15px;
+	padding-right: 30px;
+}
+.zhuce{
+	width: 50px;
+	float: right;
+	margin-top: -15px;
+	padding-right: 30px;
+
+}
+.ul_title li:hover{
+	background-color:#169BCC;
+}
+#table_div{
+	width: 1200px;
+	height: 180px;
+	border: 1px solid white;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+.diduan{
+	float: right;
+	
+}
+.banquan{
+	width: 1366px;
+	height: 120px;
+	background-color:#363636;
+	padding-top: 60px;
+	margin-top: 60px;
+}
+.img{
+	width: 1366px;
+	height: 300px;
+	
+}

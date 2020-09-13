@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>销售公告发布</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript">
+	function check() {
+		var EATATE_ID = $("#EATATE_ID").val();
+		var EATATE_NAME = $("#EATATE_NAME").val();
+		var ENTERPRISE_NAME = $("#ENTERPRISE_NAME").val();
+		var PHONE = $("#PHONE").val();
+		var BUILDING_NO = $("#BUILDING_NO").val();
+		var IDENTIFICATION_ID = $("#IDENTIFICATION_ID").val();
+		var PURPOSE_REGISTER_START_TIME = $("#PURPOSE_REGISTER_START_TIME")
+				.val();
+		var PURPOSE_REGISTER_END_TIME = $("#PURPOSE_REGISTER_END_TIME").val();
+		var RECEIVE_METERIAL_TIME = $("#RECEIVE_METERIAL_TIME").val();
+		var RECEIVE_METERIAL_ADDRESS = $("#RECEIVE_METERIAL_ADDRESS").val();
+		var LOTIERY_START_TIME = $("#LOTIERY_START_TIME").val();
+		var LOTIERY_END_TIME = $("#LOTIERY_END_TIME").val();
+		var SELECT_HOUSE_START_TIME = $("#SELECT_HOUSE_START_TIME").val();
+		var SELECT_HOUSE_END_TIME = $("#SELECT_HOUSE_END_TIME").val();
+		var INFO_DESCRIPTION = $("#INFO_DESCRIPTION").val();
+		if ((EATATE_ID == null || EATATE_ID == "")
+				|| (EATATE_NAME == null || EATATE_NAME == "")
+				|| (ENTERPRISE_NAME == null || ENTERPRISE_NAME == "")
+				|| (PHONE == null || PHONE == "")
+				|| (BUILDING_NO == null || BUILDING_NO == "")
+				|| (IDENTIFICATION_ID == null || IDENTIFICATION_ID == "")
+				|| (PURPOSE_REGISTER_START_TIME == null || PURPOSE_REGISTER_START_TIME == "")
+				|| (PURPOSE_REGISTER_END_TIME == null || PURPOSE_REGISTER_END_TIME == "")
+				|| (RECEIVE_METERIAL_TIME == null || RECEIVE_METERIAL_TIME == "")
+				|| (RECEIVE_METERIAL_ADDRESS == null || RECEIVE_METERIAL_ADDRESS == "")
+				|| (LOTIERY_START_TIME == null || LOTIERY_START_TIME == "")
+				|| (LOTIERY_END_TIME == null || LOTIERY_END_TIME == "")
+				|| (SELECT_HOUSE_START_TIME == null || SELECT_HOUSE_START_TIME == "")
+				|| (SELECT_HOUSE_END_TIME == null || SELECT_HOUSE_END_TIME == "")
+				|| (INFO_DESCRIPTION == null || INFO_DESCRIPTION == "")) {
+			alert("信息必须全部填写1");
+			alert(false);
+			return false
+		} else {
+			return true;
+		}
+	}
+</script>
+
+</head>
+
+<body>
+	<p align="center">销售公告发布</p>
+	<form action="../../../SellInfoManage" method="post"
+		onsubmit="return check()">
+		<input type="hidden" name="operate" value="Salesannouncement" />
+		<table width="341" height="460" border="0" align="center">
+			<tr>
+				<td width="133">楼盘ID</td>    
+				<td width="198"><input name="EATATE_ID" type="text"
+					id="EATATE_ID" size="20" /></td>      
+			</tr>
+			 
+			<tr>
+				   
+				<td>楼盘名称</td>    
+				<td><input name="EATATE_NAME" type="text" id="EATATE_NAME"
+					size="20"></td>      
+			</tr>
+			 
+			<tr>
+				   
+				<td>开发企业</td>    
+				<td><input name="ENTERPRISE_NAME" type="text"
+					id="ENTERPRISE_NAME" size="20"></td>      
+			</tr>
+			<tr>
+				   
+				<td>电话</td>    
+				<td><input name="PHONE" type="text" id="PHONE" size="20"></td>
+
+				 
+			</tr>
+			<tr>
+				   
+				<td>预（现）售楼栋号</td>    
+				<td><input name="BUILDING_NO" type="text" id="BUILDING_NO"
+					size="20"></td>  
+			</tr>
+			<tr>
+				   
+				<td>预（现）售证号</td>    
+				<td><input name="IDENTIFICATION_ID" type="text"
+					id="IDENTIFICATION_ID" size="20"></td>  
+			</tr>
+			<tr>
+				   
+				<td>意向登记开始时间</td>    
+				<td><input name="PURPOSE_REGISTER_START_TIME" type="text"
+					id="PURPOSE_REGISTER_START_TIME" size="20"></td>    
+			</tr>
+			 
+			<tr>
+
+				<tr>
+					   
+					<td>意向登记结束时间</td>    
+					<td><input name="PURPOSE_REGISTER_END_TIME" type="text"
+						id="PURPOSE_REGISTER_END_TIME" size="20"></td>    
+				</tr>
+
+				<tr>
+					<tr>
+						   
+						<td>现场接受资料时间</td>    
+						<td><input name="RECEIVE_METERIAL_TIME" type="text"
+							id="RECEIVE_METERIAL_TIME" size="20"></td>  
+					</tr>
+					   
+					<td>现场接受资料地点</td>    
+					<td><input name="RECEIVE_METERIAL_ADDRESS" type="text"
+						id="RECEIVE_METERIAL_ADDRESS" size="20"></td>  
+				</tr>
+				<tr>
+					   
+					<td>摇号开始时间</td>    
+					<td><input name="LOTIERY_START_TIME" type="text"
+						id="LOTIERY_START_TIME" size="20"></td>  
+				</tr>
+				<tr>
+					   
+					<td>摇号结束时间</td>    
+					<td><input name="LOTIERY_END_TIME" type="text"
+						id="LOTIERY_END_TIME" size="20"></td>  
+				</tr>
+				   
+				<tr>
+					   
+					<td>选房开始时间</td>    
+					<td><input name="SELECT_HOUSE_START_TIME" type="text"
+						id="SELECT_HOUSE_START_TIME" size="20"></td>  
+				</tr>
+				<tr>
+					   
+					<td>选房结束时间</td>    
+					<td><input name="SELECT_HOUSE_END_TIME" type="text"
+						id="SELECT_HOUSE_END_TIME" size="20"></td>  
+				</tr>
+				<tr>
+					<td height="60">销售公告内容</td>
+					<td><textarea id="INFO_DESCRIPTION" rows="5" cols="20"></textarea></td>
+				</tr>
+				<tr>
+					<th colspan="2" style="height: 70px;" valign="middle"><input
+						type="submit" value="提交" /></th>
+				</tr>
+		</table>
+	</form>
+
+</body>
+</html>

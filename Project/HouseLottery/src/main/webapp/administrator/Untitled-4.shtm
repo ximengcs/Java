@@ -1,0 +1,210 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>员工权限管理</title>
+ <style type="text/css"> 
+<!--
+body{  
+   text-decoration:none;
+   background-color:#99CCFF;
+}
+-->
+ </style> 
+<script type="text/javascript" language="javascript"> 
+function selectall(m){
+	var name=document.getElementsByName("preDelCheck");
+	for(var i=0;i<name.length;i++){
+		name[i].checked=m.checked;
+	}
+}
+function deleteUser(){
+	var tab=document.getElementById('table');
+    for(var i=tab.rows.length-1;i>0;i--){
+        if(tab.rows[i].cells[0].getElementsByTagName('input')[0].checked){
+             tab.deleteRow(i);
+             return false; 
+        }
+	}
+    alert("未选择要删除的用户！");
+}
+</script>
+</head>
+<body >
+<div  align="center"><b><font color="blue">员工权限管理 </font></b></div>
+<table width="650" height="525" align="center" frame="above">
+<td width="1000">
+<table width="130%">
+<tr>
+<td>姓名</td>
+<td><input type="text" name="name" size="5"></td>
+<td>性别</td>
+<td>
+<select style="width:40px;">
+<option >男</option>
+<option >女</option>
+</select></td>
+<td >证件类型</td>
+<td>
+<select style="width:90px;">
+<option value="1">二代身份证</option>
+<option value="2">港澳通行证</option>
+<option value="3">军人证</option>
+<option value="4">残疾证</option>
+</select></td>
+<td>证件号码:</td>
+<td><input type="text" name="zjhaoma" id="zjnum" size="5"></td>
+<td>身份类型:</td>
+<td>
+<select style="width:60px;">
+<option>员工 </option>
+<option>管理员 </option>
+</select></td>
+<td>权限:</td>
+<td>
+<select style="width:60px;">
+<option>审核 </option>
+<option>浏览 </option>
+<option>修改 </option>
+</select></td>
+<td class="co2"><input type="button" value="查询"></td>
+</tr>
+</table>
+
+<tr>
+<td>
+<table width="130%" border="1" align="center" rules="all" id="table">
+<tr>
+<td width="7%" height="50">选择</td>
+<td width="10%">姓名</td>
+<td width="8%">性别</td>
+<td width="15%">证件类型</td>
+<td width="22%">证件号码</td>
+<td width="13%">身份类型</td>
+<td width="9%">操作</td>
+<td width="9%">权限</td>
+<td width="7%">工号</td>
+</tr>
+<tr id="delCell">
+<td height="43"><input type="checkbox" name="preDelCheck" value="1"></td>
+<td>赵明</td>
+<td>男</td>
+<td>二代身份证</td>
+<td>610122379749838</td>
+<td>管理员</td>
+<td><font><a href="2.html">编辑</a></font></td>
+<td>修改</td>
+<td>01</td>
+</tr>
+<tr id="delCell2" class="co">
+<td height="42"><input type="checkbox" name="preDelCheck"  value="1"></td>
+<td>晓红</td>
+<td>女</td>
+<td>二代身份证</td>
+<td>610123346348799</td>
+<td>管理员</td>
+<td ><font><a href="2.html">编辑</a></font></td>
+<td >审核</td>
+<td >02</td>
+</tr>
+<tr id="delCell3">
+<td height="37"><input type="checkbox" name="preDelCheck"  value="1"></td>
+<td>王刚</td>
+<td>男</td>
+<td>二代身份证</td>
+<td>610111238932723</td>
+<td>员工</td>
+<td><font><a href="2.html">编辑</a></font></td>
+<td>浏览</td>
+<td>03</td>
+</tr>
+<tr id="delCell4" class="co">
+<td height="42"><input type="checkbox" name="preDelCheck"  value="1"></td>
+<td>周红</td>
+<td>女</td>
+<td>二代身份证</td>
+<td>610133574598982</td>
+<td>员工</td>
+<td class="co2"><font><a href="2.html">编辑</a></font></td>
+<td class="co2">浏览</td>
+<td class="co2">04</td>
+</tr>
+<tr id="delCell5">
+<td height="42"><input type="checkbox" name="preDelCheck" value="1"></td>
+<td>周舟</td>
+<td>男</td>
+<td>二代身份证</td>
+<td>34792347957594</td>
+<td>管理员</td>
+<td><font class="fo"><a href="2.html">编辑</a></font></td>
+<td>修改</td>
+<td>05</td>
+</tr>
+<tr>
+  <td height="38"><input type="checkbox" name="preDelCheck2" value="1"></td>
+  <td>乾照</td>
+  <td>男</td>
+  <td>二代身份证</td>
+  <td>35456676767778</td>
+  <td>员工</td>
+  <td><font><a href="2.html">编辑</a></font></td>
+  <td>浏览</td>
+  <td>06</td>
+</tr>
+<tr>
+  <td height="42"><input type="checkbox" name="preDelCheck3" value="1"></td>
+  <td>谢律</td>
+  <td>男</td>
+  <td>二代身份证</td>
+  <td>34254254555656</td>
+  <td>管理员</td>
+  <td><font><a href="2.html">编辑</a></font></td>
+  <td>浏览</td>
+  <td>07</td>
+</tr>
+</table></td>
+</tr>
+ 
+<tr>
+<td>
+<table width="100%">
+<td width="42%"><input type="checkbox"  value="1"  id="allChecked" onClick="selectall(this)"><a >全选</a></td>
+ <td align="center"><input type="button" name="" value="添加" οnclick="deleteUser()"></td> 
+
+ <td align="center"><input type="submit" name="" value="导出Excel"></td> 
+</table></td>
+</tr>
+ 
+<tr >
+<td height="38">
+<table width="120%">
+<td align="center" width=42%>>>1 2 3 4 5 6 7 8<<</td>
+
+<center>
+<td >每页显示
+<select style="width:50px;">
+<option>1 </option>
+<option>2 </option>
+<option>3 </option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7 </option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+条信息</td>
+</center>
+
+
+</table></td>
+</tr>
+<tr>
+
+<tr>
+  <td align="center">购房摇号网</td>
+</tr>
+</table>
+</body>
+</html>

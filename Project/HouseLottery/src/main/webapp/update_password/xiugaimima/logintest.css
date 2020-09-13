@@ -1,0 +1,56 @@
+
+.span1,.span2,.span3{
+    display: inline-block;
+    width: 230px;
+    height: 20px;
+    color: blue;
+    font-size: 8px;
+}
+
+input{
+    width: 160px;
+    height: 20px;
+    border-radius:5px;
+    margin: 3px 0px;
+    border:1px solid #ccc;
+}
+input_1{
+    width: 80px;
+
+}
+input_2{
+    width: 160px;
+    height: 20px;
+}
+
+btn{
+ width: 76px;
+ height: 26px;
+ font-size: 6px;
+}
+submit{
+ outline:none;
+ width:76px;
+ height:25px;
+ background:blue;
+ color:#fff;
+ border:1px solid #ccc;
+ margin-left:0px;
+ margin-left:80px;
+ cursor: pointer;
+ }
+ /* #mima{
+
+	 width: 544px;
+	 height: 332px;
+	 border: 1px solid red;
+	 border-radius: 10px;
+	 margin: 50px auto;
+ } */
+ .btn_reset:hover{
+	 cursor: pointer;
+ }
+ .btn_submit:hover{
+	 cursor: pointer;
+ }
+	 

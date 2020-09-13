@@ -1,0 +1,234 @@
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		margin: 0;
+		padding: 0;
+		background-color: #F2F2F2;
+	}
+	/*.clearfix:after {
+		content:"";
+		height: 0;
+		line-height: 0;
+		display: block;
+		visibility:hidden;
+		clear:both;
+	}
+	.clearfix {
+		zoom: 1;
+	}*//*用来兼容ie浏览器*/
+	.clearfix:after,.clearfix:before {
+		content: "";
+		display: table;
+		clear: both;
+		}
+	.clearfix {
+		   	zoom: 1;
+		}
+	div {
+		width: 1300px;
+		margin: 0px auto;
+	}
+	.head {
+		height: 335px;	
+	}
+	.h_info{
+		text-align: center;
+		font-size: 22px;
+		line-height: 300px;
+		height: 300px;
+		background-image: url(../img/bg.jpg);
+		margin: 0;
+	}
+	.h_link{
+		font-size: 15px;
+		font-weight: bold;
+		color:#000000;	
+		height: 30px;
+		padding: 0px;
+		margin-top: 5px;
+	}
+	.h_link  ul{
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		height: 30px;
+		line-height: 30px;	
+	}
+	.h_link ul li{
+		display: inline;
+	}
+	.h_link a{
+		text-decoration: none;
+		display: block;
+		height: 30px;
+		line-height: 30px;
+		width: 40px;
+		text-align: center;
+		color: #000000;
+		float: right;
+	}
+	.h_link a:hover{
+		background-color: #2A627D;
+		color: white;
+		font-size: 16px;
+	}
+	.info{
+		height: 105px;
+	}
+	.info_top{
+		height:100px;
+		margin-top:5px;
+		color:#93A2b2;
+	}
+	.info_left{
+		width:350px;
+		height:85px;
+		float:left;
+		padding:15px 0 0 10px;
+		background-color: #D7D7D7;
+	}
+	.info_right{
+		background-color: #D6EBFF;
+		height:85px;
+		width:930px;
+		padding:15px 0 0 10px;
+		float: right;
+	}
+	.info_bottom{
+		margin-top:10px;
+		height:50px;
+		text-align: center;
+		color:#93A2b2;
+		line-height: 50px;
+		font-size: 14px;
+		background-color: #D7D7D7;
+	}
+	.logo {
+		width: 1300px;
+		color:#93A2b2;	
+		height: 45px;
+		line-height: 45px;
+		padding: 0px;	
+		margin-bottom: 5px;	
+	}
+	.logo ul{
+		list-style: none;
+		margin: 0px;
+		padding: 0px;	
+	}	
+	.logo li{
+		/*float: left;*/
+	}
+	.logo a{
+		text-decoration: none;
+		display: block;
+		height: 45px;
+		line-height: 45px;
+		width: 140px;
+		text-align: center;
+		color: #000000;
+		float: left;
+	}
+	.logo a:hover{
+		color: white;
+		font-size: 18px;
+		background-color: #2A627D;
+	}
+	.main {
+		height: auto;
+		overflow: hidden;
+	}
+	.main_content {
+		width: 1300px;
+		float: left;
+		padding: 0px;
+		margin-top:5px;
+	}
+	.main_content{
+		padding: 0px;
+	}
+	.s_parent{
+		position: relative;
+	}
+	.search{
+		width: 300px;
+	    height: 40px;
+	    border-radius: 18px;
+	    outline: none;
+	    border: 1px solid #ccc;
+	    padding-left: 20px;
+	    position: absolute;
+	}
+	.s_btn {
+	    height: 35px;
+	    width: 35px;
+	    position: absolute;
+	    background: url(../img/sousuo_bt.png) no-repeat  100px 99px;
+	    top: 6px;
+	    left: 285px;
+	    border: none;
+	    outline: none;
+	    cursor: pointer;
+	}
+	.footer {
+		text-align: center;
+		color: #999999;
+		font-size: 14px;
+		width: 1300px;
+		height: 120px;
+		background-color:#363636;
+		padding-top: 60px;
+		margin-top: 60px;
+		clear: both;
+	}
+	.ul_title li{
+	list-style-type:none;
+	display:block;
+	float:left;
+	margin-left: 15px;
+	margin:0px 10px; 
+	
+
+
+
+}
+.ul_title .total{
+	left: 10px;
+}
+.yixiang_dengji{
+	width: 98px;
+	float: right;
+	margin-top: -15px;
+	margin-right: 30px;
+}
+.denglu{
+	width:50px;
+	float: right;
+	margin-top: -15px;
+	padding-right: 30px;
+}
+.zhuce{
+	width: 50px;
+	float: right;
+	margin-top: -15px;
+	padding-right: 30px;
+
+}
+.ul_title li:hover{
+	background-color:#169BCC;
+}
+#table_div{
+	width: 1200px;
+	height: 180px;
+	border: 1px solid white;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+.diduan{
+	float: right;
+	
+}
+	</style>

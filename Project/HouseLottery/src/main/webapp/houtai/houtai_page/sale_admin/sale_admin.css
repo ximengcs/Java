@@ -1,0 +1,40 @@
+#div_sale{
+	width: 700px;
+	height: 300px;
+	border:1px solid red;
+	margin:0 auto;
+	background: #F5F6F7;
+}
+#yaohao_time{
+	background: #F5F6F7;
+	float: left;
+	width: 300px;
+	height: 100px;
+	/*border:1px solid red;*/
+	margin-top: 50px;
+	margin-left: 30px;
+}
+#select_time{
+	background: #F5F6F7;
+	float: left;
+	width: 300px;
+	height: 100px;
+	/*border:1px solid red;*/
+	margin-top: 50px;
+	margin-left: 10px;
+}
+.yaohao_btn_ok{
+	cursor: pointer;
+	border-radius: 4px;
+}
+.yaohao_btn_ok:hover{
+	
+	background-color:#FB6E53;
+}
+.xuan_btn_ok{
+	cursor: pointer;
+	border-radius: 4px;
+}
+.xuan_btn_ok:hover{
+	background-color:#FB6E53;
+}

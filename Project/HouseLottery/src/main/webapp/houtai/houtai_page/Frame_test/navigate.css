@@ -1,0 +1,37 @@
+
+#div_navigate{
+	background-color: #F8F8F8;
+	position: absolute;
+	float: left;
+	width: 250px;
+	height: 510px;
+	border:1px solid red;
+	margin-top: 20px;
+/*	margin-left: 5px;*/
+}
+#div_navigate ul{
+	padding:0;
+	margin-top: 5px;
+/* 	text-decoration:none;*/
+/* 	list-style: none; */
+	width: 250px;
+	height: 500px;
+	/*border:1px solid red;*/
+}
+ul li{
+	height: 50px;
+	list-style-type: none;
+	border-bottom: :1px;
+	text-indent:40px;
+	vertical-align:middle;
+	line-height: 48px;
+
+}
+ul li:hover{
+	background-color: #C7CBD1;
+
+}
+ul li a:hover{
+	color: #282923;
+	font-size: 20px;
+}

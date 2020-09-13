@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>添加</title>
+	<link rel="stylesheet" type="text/css" href="add.css">
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="user_add.js"></script>
+</head>
+<body>
+	<div id="add">
+	<form action="/houselottery/StaffManage" method="post">
+		<input type="hidden" name="operate" value="staffAdd"/>
+		<table id="table_add" cellpadding="1" cellspacing="1" border="0">
+			<caption>用户添加</caption>
+			<tr style="height: 45px">
+				<td>工&nbsp;&nbsp;&nbsp;号：</td>
+				<td><input type="text" id="EMPLOYEE_ID" class="username" name="EMPLOYEE_ID" placeholder="工号为数字且必须为6~10位"></td>
+
+			</tr>
+			<tr  style="height: 45px">
+				<td>姓&nbsp;&nbsp;&nbsp;名：</td>
+				<td><input type="text" id="EMPLOYEE_NAME" name="EMPLOYEE_NAME" placeholder="该字段不能为空" ></td>
+			</tr>
+			<tr style="height: 45px">
+				<td>密&nbsp;&nbsp;&nbsp;码：</td>
+				<td><input type="password" class="password" name="EMPLOYEE_PASSWORD"  placeholder="请输入8-15位密码"></td>
+			</tr>
+			<tr  style="height: 45px">
+				<td>权&nbsp;&nbsp;&nbsp;限：</td>
+				<td>
+					<!-- <input type="checkbox" name="chaxun" value="查询" />查询 -->
+					<input type="checkbox" id="chaxun" checked>查询</input>
+					<!-- <input type="checkbox" name="xiugai" value="修改" />修改 -->
+					<input type="checkbox" id="xiugai" checked>修改</input>
+  					<input type="checkbox" name="shenhe" value="审核" />审核
+  					<input type="checkbox" name="fanshenhe" value="反审核" />反审核
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" class="btn_zhuce" value="提交">
+					<input type="reset" class="btn_chongzhi" value="重置">
+				</td>
+			</tr>
+
+		</table>
+    </form>
+	</div>
+		<!-- 工&nbsp;&nbsp;&nbsp;号：<input type="text" id="username" class="username">
+				<span class="span1" id="span1">用户名支持数字和字母，位数至少为四位</span>
+				<br>
+				
+				姓&nbsp;&nbsp;&nbsp;名：<input type="text" >
+				<span class="span4" id="span4"></span>  
+				<br>    
+				密&nbsp;&nbsp;&nbsp;码：<input type="password" class="password">
+				<span class="span2" id="span2">密码支持数字和字母，位数至少为四位</span>
+		        <br> 
+				<form name="myform">  
+  					权&nbsp;&nbsp;&nbsp;限：
+  					<p><input type="checkbox" name="chaxun" value="查询" />查询</p>   
+                    <p><input type="checkbox" name="xiugai" value="修改" />修改</p>
+  					<p><input type="checkbox" name="shenhe" value="审核" />审核</p>
+				</form>
+		
+				
+	</div> -->
+
+</body>
+</html>
